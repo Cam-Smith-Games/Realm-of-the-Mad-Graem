@@ -1,0 +1,87 @@
+@font-face {
+    font-family: OldGameFatty;
+    src: url(OldGameFatty.ttf);
+}
+
+/* #region settings */
+#settings {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0.5em 0.5em 0 0.5em;
+    opacity: 0.5;
+    border: 1px solid red;
+    background: black;
+    padding: 0.35em 0.25em 0.25em 0.25em;
+    
+    border-radius: 5px 5px 0 0;
+}
+    #settings > div {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 100;
+        margin: 0 0.5em;
+    }
+#settings label {
+    color: white;
+    text-align: center;
+}
+    #settings input {
+        margin: 0;
+        padding: 0;
+        border: none;
+    }
+/* #endregion */
+
+html, body {
+    margin: 0;
+    font-family: OldGameFatty !important;
+}
+
+body {
+    padding: 10px;
+    background: rgb(50,50,50);
+}
+
+    body > h1 {
+        color: red;
+        font-size: 3em;
+        margin: 0.25em 0;
+        font-weight: normal;
+        font-family: Impact, Charcoal, sans-serif;
+        text-align: center;
+    }
+
+canvas {
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+
+    z-index: -1;
+
+    display:block;
+    margin: 0 auto;
+
+    border: 1px solid white;
+    border-radius: 0.25em;
+    
+    /*   
+        FORCING 16:9 width:height ratio
+        9/16 = 0.5625
+        16/9 = 1.7778
+        22px = (2*10px padding) + (2*1px border) 
+        -----------------------------------------
+        9/16 * 22px = 12.375px 
+        16/9 * 22px = 39.111px 
+    */
+    width: calc(100vw - 22px);
+    height: calc(56.25vw - 12.375px);
+    max-width: calc(177.78vh - 39.111px);
+    max-height: calc(100vh - 22px);
+}
+
+#blurCanvas {
+    display: none !important;
+}
+
